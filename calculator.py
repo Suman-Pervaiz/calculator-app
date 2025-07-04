@@ -73,23 +73,48 @@ def handle_input(value):
 # CSS styling
 st.markdown("""
 <style>
+    /* Common button styles */
     div[data-testid="stButton"] > button {
         width: 100% !important;
         height: 55px !important;
         font-weight: 900 !important;
         font-size: 30px !important;
-        color: #0E0E10 !important;
     }
+
+    /* Primary button styling */
     div[data-testid="stButton"] > button[kind="primary"] {
         background-color: #ff4b4b !important;
         color: white !important;
     }
+
     div[data-testid="stButton"] > button[kind="primary"]:active {
         background-color: #ff4b4b !important;
         color: white !important;
     }
+
+    /* DARK MODE specific styling */
+    @media (prefers-color-scheme: dark) {
+        div[data-testid="stButton"] > button {
+            color: white !important;
+        }
+        .display-box {
+            color: black !important;
+        }
+    }
+
+    /* Default (light mode) display box */
+    .display-box {
+        font-size: 2rem;
+        text-align: right;
+        background: #f2f2f2;
+        padding: 5px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        color: black !important;
+    }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Title and display area
 st.title("🧮 Functional Calculator")
