@@ -70,6 +70,7 @@ def handle_input(value):
                 st.session_state.expression += value
                 st.session_state.display = st.session_state.expression
 
+
 # CSS styling
 st.markdown("""
 <style>
@@ -92,6 +93,17 @@ st.markdown("""
         color: white !important;
     }
 
+    /* Default (light mode) display box */
+    .display-box {
+        font-size: 2rem;
+        text-align: right;
+        background: #f2f2f2;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        color: black !important;
+    }
+
     /* DARK MODE specific styling */
     @media (prefers-color-scheme: dark) {
         div[data-testid="stButton"] > button {
@@ -99,19 +111,8 @@ st.markdown("""
         }
         .display-box {
             background: #f2f2f2 !important;
-            color: black !important;
+            color: black !important; /* Text ko black krta ha sirf dark mode k liye */
         }
-    }
-
-    /* Default (light mode) display box */
-    .display-box {
-        font-size: 2rem;
-        text-align: right;
-        background: #f2f2f2;
-        padding: 5px;
-        border-radius: 6px;
-        margin-bottom: 10px;
-        color: black !important;
     }
 </style>
 """, unsafe_allow_html=True)
