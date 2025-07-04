@@ -98,6 +98,7 @@ st.markdown("""
             color: white !important;
         }
         .display-box {
+            background: #f2f2f2 !important;
             color: black !important;
         }
     }
@@ -114,6 +115,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Title and display area
